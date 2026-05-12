@@ -23,6 +23,15 @@ import { Route as ClaimsRouteImport } from './routes/claims'
 import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ItemIdRouteImport } from './routes/item.$id'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminProfileRouteImport } from './routes/admin.profile'
+import { Route as AdminLogsRouteImport } from './routes/admin.logs'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminItemsRouteImport } from './routes/admin.items'
+import { Route as AdminFeedbackRouteImport } from './routes/admin.feedback'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminClaimsRouteImport } from './routes/admin.claims'
 
 const ReportLostRoute = ReportLostRouteImport.update({
   id: '/report-lost',
@@ -94,6 +103,51 @@ const ItemIdRoute = ItemIdRouteImport.update({
   path: '/item/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProfileRoute = AdminProfileRouteImport.update({
+  id: '/admin/profile',
+  path: '/admin/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLogsRoute = AdminLogsRouteImport.update({
+  id: '/admin/logs',
+  path: '/admin/logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminItemsRoute = AdminItemsRouteImport.update({
+  id: '/admin/items',
+  path: '/admin/items',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminFeedbackRoute = AdminFeedbackRouteImport.update({
+  id: '/admin/feedback',
+  path: '/admin/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminClaimsRoute = AdminClaimsRouteImport.update({
+  id: '/admin/claims',
+  path: '/admin/claims',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -109,6 +163,15 @@ export interface FileRoutesByFullPath {
   '/register': typeof RegisterRoute
   '/report-found': typeof ReportFoundRoute
   '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +188,15 @@ export interface FileRoutesByTo {
   '/register': typeof RegisterRoute
   '/report-found': typeof ReportFoundRoute
   '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesById {
@@ -142,6 +214,15 @@ export interface FileRoutesById {
   '/register': typeof RegisterRoute
   '/report-found': typeof ReportFoundRoute
   '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
   '/item/$id': typeof ItemIdRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +241,15 @@ export interface FileRouteTypes {
     | '/register'
     | '/report-found'
     | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
     | '/item/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +266,15 @@ export interface FileRouteTypes {
     | '/register'
     | '/report-found'
     | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
     | '/item/$id'
   id:
     | '__root__'
@@ -192,6 +291,15 @@ export interface FileRouteTypes {
     | '/register'
     | '/report-found'
     | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
     | '/item/$id'
   fileRoutesById: FileRoutesById
 }
@@ -209,6 +317,15 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
   ReportFoundRoute: typeof ReportFoundRoute
   ReportLostRoute: typeof ReportLostRoute
+  AdminClaimsRoute: typeof AdminClaimsRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminFeedbackRoute: typeof AdminFeedbackRoute
+  AdminItemsRoute: typeof AdminItemsRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminLogsRoute: typeof AdminLogsRoute
+  AdminProfileRoute: typeof AdminProfileRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
   ItemIdRoute: typeof ItemIdRoute
 }
 
@@ -312,6 +429,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ItemIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/profile': {
+      id: '/admin/profile'
+      path: '/admin/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AdminProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/logs': {
+      id: '/admin/logs'
+      path: '/admin/logs'
+      fullPath: '/admin/logs'
+      preLoaderRoute: typeof AdminLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/items': {
+      id: '/admin/items'
+      path: '/admin/items'
+      fullPath: '/admin/items'
+      preLoaderRoute: typeof AdminItemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/feedback': {
+      id: '/admin/feedback'
+      path: '/admin/feedback'
+      fullPath: '/admin/feedback'
+      preLoaderRoute: typeof AdminFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/claims': {
+      id: '/admin/claims'
+      path: '/admin/claims'
+      fullPath: '/admin/claims'
+      preLoaderRoute: typeof AdminClaimsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -329,6 +509,15 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterRoute: RegisterRoute,
   ReportFoundRoute: ReportFoundRoute,
   ReportLostRoute: ReportLostRoute,
+  AdminClaimsRoute: AdminClaimsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminFeedbackRoute: AdminFeedbackRoute,
+  AdminItemsRoute: AdminItemsRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminLogsRoute: AdminLogsRoute,
+  AdminProfileRoute: AdminProfileRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminUsersRoute: AdminUsersRoute,
   ItemIdRoute: ItemIdRoute,
 }
 export const routeTree = rootRouteImport

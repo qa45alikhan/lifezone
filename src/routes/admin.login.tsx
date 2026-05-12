@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhoneShell } from "@/components/PhoneShell";
 import { Lock } from "lucide-react";
-import { Field } from "../login";
+import { Field } from "@/routes/login";
 
 export const Route = createFileRoute("/admin/login")({ component: AdminLogin });
 

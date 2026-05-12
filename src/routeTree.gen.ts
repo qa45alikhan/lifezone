@@ -9,15 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReportLostRouteImport } from './routes/report-lost'
+import { Route as ReportFoundRouteImport } from './routes/report-found'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as LostRouteImport } from './routes/lost'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as FoundRouteImport } from './routes/found'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ClaimsRouteImport } from './routes/claims'
+import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ItemIdRouteImport } from './routes/item.$id'
 
+const ReportLostRoute = ReportLostRouteImport.update({
+  id: '/report-lost',
+  path: '/report-lost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportFoundRoute = ReportFoundRouteImport.update({
+  id: '/report-found',
+  path: '/report-found',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LostRoute = LostRouteImport.update({
+  id: '/lost',
+  path: '/lost',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -30,9 +59,29 @@ const HomeRoute = HomeRouteImport.update({
   path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FoundRoute = FoundRouteImport.update({
+  id: '/found',
+  path: '/found',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClaimsRoute = ClaimsRouteImport.update({
+  id: '/claims',
+  path: '/claims',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -40,52 +89,164 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ItemIdRoute = ItemIdRouteImport.update({
+  id: '/item/$id',
+  path: '/item/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
   '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
   '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
   '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/home' | '/login' | '/register'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/item/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/home' | '/login' | '/register'
-  id: '__root__' | '/' | '/dashboard' | '/home' | '/login' | '/register'
+  to:
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/item/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/item/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChatRoute: typeof ChatRoute
+  ClaimsRoute: typeof ClaimsRoute
   DashboardRoute: typeof DashboardRoute
+  FeedbackRoute: typeof FeedbackRoute
+  FoundRoute: typeof FoundRoute
   HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
+  LostRoute: typeof LostRoute
+  ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
+  ReportFoundRoute: typeof ReportFoundRoute
+  ReportLostRoute: typeof ReportLostRoute
+  ItemIdRoute: typeof ItemIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/report-lost': {
+      id: '/report-lost'
+      path: '/report-lost'
+      fullPath: '/report-lost'
+      preLoaderRoute: typeof ReportLostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report-found': {
+      id: '/report-found'
+      path: '/report-found'
+      fullPath: '/report-found'
+      preLoaderRoute: typeof ReportFoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lost': {
+      id: '/lost'
+      path: '/lost'
+      fullPath: '/lost'
+      preLoaderRoute: typeof LostRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -102,11 +263,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/found': {
+      id: '/found'
+      path: '/found'
+      fullPath: '/found'
+      preLoaderRoute: typeof FoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/claims': {
+      id: '/claims'
+      path: '/claims'
+      fullPath: '/claims'
+      preLoaderRoute: typeof ClaimsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -116,16 +305,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/item/$id': {
+      id: '/item/$id'
+      path: '/item/$id'
+      fullPath: '/item/$id'
+      preLoaderRoute: typeof ItemIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChatRoute: ChatRoute,
+  ClaimsRoute: ClaimsRoute,
   DashboardRoute: DashboardRoute,
+  FeedbackRoute: FeedbackRoute,
+  FoundRoute: FoundRoute,
   HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
+  LostRoute: LostRoute,
+  ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
+  ReportFoundRoute: ReportFoundRoute,
+  ReportLostRoute: ReportLostRoute,
+  ItemIdRoute: ItemIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

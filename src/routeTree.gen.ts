@@ -9,38 +9,412 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReportLostRouteImport } from './routes/report-lost'
+import { Route as ReportFoundRouteImport } from './routes/report-found'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as LostRouteImport } from './routes/lost'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as FoundRouteImport } from './routes/found'
+import { Route as FeedbackRouteImport } from './routes/feedback'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ClaimsRouteImport } from './routes/claims'
+import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ItemIdRouteImport } from './routes/item.$id'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminProfileRouteImport } from './routes/admin.profile'
+import { Route as AdminLogsRouteImport } from './routes/admin.logs'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminItemsRouteImport } from './routes/admin.items'
+import { Route as AdminFeedbackRouteImport } from './routes/admin.feedback'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminClaimsRouteImport } from './routes/admin.claims'
 
+const ReportLostRoute = ReportLostRouteImport.update({
+  id: '/report-lost',
+  path: '/report-lost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportFoundRoute = ReportFoundRouteImport.update({
+  id: '/report-found',
+  path: '/report-found',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LostRoute = LostRouteImport.update({
+  id: '/lost',
+  path: '/lost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FoundRoute = FoundRouteImport.update({
+  id: '/found',
+  path: '/found',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClaimsRoute = ClaimsRouteImport.update({
+  id: '/claims',
+  path: '/claims',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ItemIdRoute = ItemIdRouteImport.update({
+  id: '/item/$id',
+  path: '/item/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProfileRoute = AdminProfileRouteImport.update({
+  id: '/admin/profile',
+  path: '/admin/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLogsRoute = AdminLogsRouteImport.update({
+  id: '/admin/logs',
+  path: '/admin/logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminItemsRoute = AdminItemsRouteImport.update({
+  id: '/admin/items',
+  path: '/admin/items',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminFeedbackRoute = AdminFeedbackRouteImport.update({
+  id: '/admin/feedback',
+  path: '/admin/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminClaimsRoute = AdminClaimsRouteImport.update({
+  id: '/admin/claims',
+  path: '/admin/claims',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
+  '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
+  '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/claims': typeof ClaimsRoute
+  '/dashboard': typeof DashboardRoute
+  '/feedback': typeof FeedbackRoute
+  '/found': typeof FoundRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/lost': typeof LostRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/report-found': typeof ReportFoundRoute
+  '/report-lost': typeof ReportLostRoute
+  '/admin/claims': typeof AdminClaimsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/feedback': typeof AdminFeedbackRoute
+  '/admin/items': typeof AdminItemsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/logs': typeof AdminLogsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/item/$id': typeof ItemIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
+    | '/item/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
+    | '/item/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/claims'
+    | '/dashboard'
+    | '/feedback'
+    | '/found'
+    | '/home'
+    | '/login'
+    | '/lost'
+    | '/profile'
+    | '/register'
+    | '/report-found'
+    | '/report-lost'
+    | '/admin/claims'
+    | '/admin/dashboard'
+    | '/admin/feedback'
+    | '/admin/items'
+    | '/admin/login'
+    | '/admin/logs'
+    | '/admin/profile'
+    | '/admin/reports'
+    | '/admin/users'
+    | '/item/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChatRoute: typeof ChatRoute
+  ClaimsRoute: typeof ClaimsRoute
+  DashboardRoute: typeof DashboardRoute
+  FeedbackRoute: typeof FeedbackRoute
+  FoundRoute: typeof FoundRoute
+  HomeRoute: typeof HomeRoute
+  LoginRoute: typeof LoginRoute
+  LostRoute: typeof LostRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  ReportFoundRoute: typeof ReportFoundRoute
+  ReportLostRoute: typeof ReportLostRoute
+  AdminClaimsRoute: typeof AdminClaimsRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminFeedbackRoute: typeof AdminFeedbackRoute
+  AdminItemsRoute: typeof AdminItemsRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminLogsRoute: typeof AdminLogsRoute
+  AdminProfileRoute: typeof AdminProfileRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  ItemIdRoute: typeof ItemIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/report-lost': {
+      id: '/report-lost'
+      path: '/report-lost'
+      fullPath: '/report-lost'
+      preLoaderRoute: typeof ReportLostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report-found': {
+      id: '/report-found'
+      path: '/report-found'
+      fullPath: '/report-found'
+      preLoaderRoute: typeof ReportFoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lost': {
+      id: '/lost'
+      path: '/lost'
+      fullPath: '/lost'
+      preLoaderRoute: typeof LostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/found': {
+      id: '/found'
+      path: '/found'
+      fullPath: '/found'
+      preLoaderRoute: typeof FoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/claims': {
+      id: '/claims'
+      path: '/claims'
+      fullPath: '/claims'
+      preLoaderRoute: typeof ClaimsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +422,104 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/item/$id': {
+      id: '/item/$id'
+      path: '/item/$id'
+      fullPath: '/item/$id'
+      preLoaderRoute: typeof ItemIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/profile': {
+      id: '/admin/profile'
+      path: '/admin/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AdminProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/logs': {
+      id: '/admin/logs'
+      path: '/admin/logs'
+      fullPath: '/admin/logs'
+      preLoaderRoute: typeof AdminLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/items': {
+      id: '/admin/items'
+      path: '/admin/items'
+      fullPath: '/admin/items'
+      preLoaderRoute: typeof AdminItemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/feedback': {
+      id: '/admin/feedback'
+      path: '/admin/feedback'
+      fullPath: '/admin/feedback'
+      preLoaderRoute: typeof AdminFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/claims': {
+      id: '/admin/claims'
+      path: '/admin/claims'
+      fullPath: '/admin/claims'
+      preLoaderRoute: typeof AdminClaimsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChatRoute: ChatRoute,
+  ClaimsRoute: ClaimsRoute,
+  DashboardRoute: DashboardRoute,
+  FeedbackRoute: FeedbackRoute,
+  FoundRoute: FoundRoute,
+  HomeRoute: HomeRoute,
+  LoginRoute: LoginRoute,
+  LostRoute: LostRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  ReportFoundRoute: ReportFoundRoute,
+  ReportLostRoute: ReportLostRoute,
+  AdminClaimsRoute: AdminClaimsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminFeedbackRoute: AdminFeedbackRoute,
+  AdminItemsRoute: AdminItemsRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminLogsRoute: AdminLogsRoute,
+  AdminProfileRoute: AdminProfileRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  ItemIdRoute: ItemIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
